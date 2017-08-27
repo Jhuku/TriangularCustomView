@@ -1,6 +1,8 @@
 # TriangularCustomView
 A Custom View to indicate multiple fragments with a triangular indicator.
 
+![](https://github.com/Jhuku/TriangularCustomView/blob/master/screenshot.gif)
+
 # Usage
 
 ### Step 1: Add it in your root build.gradle (project) at the end of repository:
