@@ -43,7 +43,7 @@ Create an array of image resources from the drawable preferably png icon files.
 ```
 mCustomView = (TriangularIndicator) findViewById(R.id.triangle);
 
-int [] res{ R.drawable.settimerbutton,
+int [] res = { R.drawable.settimerbutton,
 						R.drawable.settimerbutton,	
 						R.drawable.settimerbutton,
 						R.drawable.settimerbutton,
