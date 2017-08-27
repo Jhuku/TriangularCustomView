@@ -41,7 +41,7 @@ allprojects {
 Create an array of image resources from the drawable preferably png icon files.
 
 ```
-ti = (TriangularIndicator) findViewById(R.id.triangle);
+mCustomView = (TriangularIndicator) findViewById(R.id.triangle);
 
 int [] res{ R.drawable.settimerbutton,
 						R.drawable.settimerbutton,	
@@ -49,7 +49,20 @@ int [] res{ R.drawable.settimerbutton,
 						R.drawable.settimerbutton,
 						R.drawable.settimerbutton};
 
-ti.setResources(res);
+mCustomView.setResources(res);
 ```
 
+### Navigate with the following Touch listener section value
+```
+ mCustomView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
 
+                float section = (int)Math.floor(event.getX()*(res.length)/mCustomView.getWidth());
+                
+                Log.d("Touch event value",""+section);
+                return false;
+            }
+        });
+```
+Here section value 0.0 means first tab and so on..
