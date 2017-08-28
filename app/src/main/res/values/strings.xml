@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CustomViewPlayGround</string>
+    <dimen name="square_size">100dp</dimen>
+</resources>

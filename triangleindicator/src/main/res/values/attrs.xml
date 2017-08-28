@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TriangularIndicator">
+        <attr name="no_of_sections" format="integer"/>
+        <attr name="android:entries"/>
+        <attr name="set_colour" format="color" />
+    </declare-styleable>
+</resources>

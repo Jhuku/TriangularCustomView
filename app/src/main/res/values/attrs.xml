@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomView">
+        <attr name="square_color" format="color"/>
+        <attr name="square_size" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="IndicatorView">
+        <attr name="no_of_sections" format="integer"/>
+        <attr name="android:entries"/>
+        <attr name="set_colour" format="color" />
+    </declare-styleable>
+</resources>
