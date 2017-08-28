@@ -1,7 +1,7 @@
 # TriangularCustomView
 A Custom View to indicate multiple fragments with a triangular indicator.
 
-![](https://github.com/Jhuku/TriangularCustomView/blob/master/screensnap.gif)
+![](https://github.com/Jhuku/TriangularCustomView/blob/master/finalsc.gif)
 
 # Usage
 
