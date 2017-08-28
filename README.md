@@ -1,7 +1,7 @@
 # TriangularCustomView
 A Custom View to indicate multiple fragments with a triangular indicator.
 
-![](https://github.com/Jhuku/TriangularCustomView/blob/master/screenshot.gif)
+![](https://github.com/Jhuku/TriangularCustomView/blob/master/screensnap.gif)
 
 # Usage
 
@@ -38,7 +38,7 @@ allprojects {
 
 ### Step 4: In your Activity create an array of image resoures
 
-Create an array of image resources from the drawable preferably png icon files.
+Create an array of vector image resources from the drawable.
 
 ```
 mCustomView = (TriangularIndicator) findViewById(R.id.triangle);
