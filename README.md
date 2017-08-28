@@ -21,7 +21,7 @@ allprojects {
   
   ```
   dependencies {
-	        compile 'com.github.Jhuku:TriangularCustomView:0.1.0'
+	        compile 'com.github.Jhuku:TriangularCustomView:0.1.1'
 	}
   ```
 ### Step 3: Set the colour and no of sections in the xml
