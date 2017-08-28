@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final int [] res={R.drawable.settimerbutton,R.drawable.notification,R.drawable.settimerbutton,R.drawable.settimerbutton,R.drawable.settimerbutton};
+        final int [] res={R.drawable.chat,R.drawable.location,R.drawable.message,R.drawable.notification,R.drawable.settimerbutton};
         mCustomView = (IndicatorView) findViewById(R.id.customView);
         mCustomView.setResources(res);
 
