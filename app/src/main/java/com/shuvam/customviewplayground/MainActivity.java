@@ -18,9 +18,6 @@ public class MainActivity extends AppCompatActivity {
         mCustomView = (IndicatorView) findViewById(R.id.customView);
         mCustomView.setResources(res);
 
-
-
-
         mCustomView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
