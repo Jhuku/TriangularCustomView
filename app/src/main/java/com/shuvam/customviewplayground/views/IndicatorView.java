@@ -11,6 +11,7 @@ import android.graphics.Path;
 import android.graphics.PointF;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
+import android.support.graphics.drawable.VectorDrawableCompat;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -35,6 +36,7 @@ public class IndicatorView extends View {
     private PointF rightpt;
     private Bitmap  [] imgRes;
     private int [] resources;
+    private VectorDrawableCompat [] vds;
 
 
 
@@ -88,12 +90,13 @@ public class IndicatorView extends View {
             return;
         }
 
-        TypedArray ta = getContext().obtainStyledAttributes(set , R.styleable.IndicatorView);
+        TypedArray ta = getContext().obtainStyledAttributes(set,R.styleable.IndicatorView);
         noOfTabs = ta.getInteger(R.styleable.IndicatorView_no_of_sections,3);
         sectionColour = ta.getColor(R.styleable.IndicatorView_set_colour,Color.YELLOW);
         mRectPaint.setColor(sectionColour);
         mCirclePaint.setColor(Color.WHITE);
-
+        imgRes = new Bitmap[noOfTabs];
+        vds = new VectorDrawableCompat[noOfTabs];
         ta.recycle();
 
     }
@@ -125,16 +128,20 @@ public class IndicatorView extends View {
 
         canvas.drawPath(triangle,mRectPaint);
 
-        Log.d("Size of imgres inOndraw",""+resources.length);
-        imgRes = new Bitmap[noOfTabs];
+        for(int i =0; i<resources.length; i++)
+        {
+            vds[i] = VectorDrawableCompat.create(getContext().getResources(), resources[i], null);
+        }
+
         for(int i=0; i<resources.length; i++)
         {
-            imgRes[i] = BitmapFactory.decodeResource(getResources(),resources[i]);
+            //imgRes[i] = BitmapFactory.decodeResource(getResources(),resources[i]); //Use for png images
+            imgRes[i] = getBitmap(vds[i]);
+
         }
       //  canvas.drawBitmap(imgRes[0],);
         canvas.drawBitmap(imgRes[0],(getWidth()/noOfTabs)/2-(imgRes[0].getWidth()/2),70-(imgRes[0].getHeight())/2,null);
         for(int i =1; i<noOfTabs; i++) {
-           // canvas.drawCircle((i / (float) noOfTabs) * getWidth(), 66, 6, mCirclePaint);
             canvas.drawBitmap(imgRes[i],(i / (float) noOfTabs) * getWidth()+(getWidth()/noOfTabs)/2-(imgRes[i].getWidth()/2),70-(imgRes[i].getHeight())/2,null);
         }
     }
@@ -161,6 +168,15 @@ public class IndicatorView extends View {
         }
         invalidate();
         return true;
+    }
+
+    private static Bitmap getBitmap(VectorDrawableCompat vectorDrawable) {
+        Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth(),
+                vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        vectorDrawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+        vectorDrawable.draw(canvas);
+        return bitmap;
     }
 
 

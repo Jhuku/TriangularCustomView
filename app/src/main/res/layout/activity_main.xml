@@ -14,8 +14,11 @@
        android:layout_height="100dp"
        android:id="@+id/customView"
        app:no_of_sections="5"
-       app:set_colour="#e7ab33"
+       app:set_colour="@color/squareColor"
        />
 
+   <com.shuvam.customviewplayground.views.NewView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content" />
 
 </LinearLayout>

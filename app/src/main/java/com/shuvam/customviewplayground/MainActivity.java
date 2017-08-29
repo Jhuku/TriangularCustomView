@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final int [] res={R.drawable.chat,R.drawable.location,R.drawable.message,R.drawable.notification,R.drawable.settimerbutton};
+        final int [] res={R.drawable.ic_android_black_24dp,R.drawable.ic_archive_black_24dp,R.drawable.ic_audiotrack_black_24dp,R.drawable.ic_backup_black_24dp,R.drawable.ic_bluetooth_audio_black_24dp};
         mCustomView = (IndicatorView) findViewById(R.id.customView);
         mCustomView.setResources(res);
 
@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
-                float section = (float) Math.floor(event.getX()*(res.length)/mCustomView.getWidth());
+                float section = (int)Math.floor(event.getX()*(res.length)/mCustomView.getWidth());
+
                 Log.d("Touch event value",""+section);
                 return false;
             }
